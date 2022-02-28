@@ -1,0 +1,11 @@
+{
+  "$schema": "https://schema.yext.com/config/km/settings/v1",
+  "primaryEntityType": "location",
+  "entityTypeSettings": [
+    {
+      "entityType": "skilljar_course",
+      "defaultFieldEligibilityGroup": "skilljar_course.default",
+      "disabled": false
+    }
+  ]
+}

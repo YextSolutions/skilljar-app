@@ -1,0 +1,60 @@
+{
+  "$id": "skilljar_course",
+  "$schema": "https://schema.yext.com/config/km/field-presentation/v1",
+  "entityType": "skilljar_course",
+  "displayName": "Course",
+  "presentationEntries": [
+    {
+      "displayName": "Content",
+      "entryType": "DIVIDER"
+    },
+    {
+      "displayName": "Core Information",
+      "entryType": "SECTION",
+      "fields": [
+        {
+          "id": "name",
+          "visibleOnAdd": true
+        },
+        {
+          "id": "entityId",
+          "visibleOnAdd": true
+        },
+        {
+          "id": "landingPageUrl"
+        },
+        {
+          "id": "shortDescription"
+        },
+        {
+          "id": "richTextDescription"
+        },
+        {
+          "id": "skilljar_courseCategory"
+        },
+        {
+          "id": "skilljar_courseLessons"
+        },
+        {
+          "id": "skilljar_lessonCount"
+        }
+      ]
+    },
+    {
+      "displayName": "Other",
+      "entryType": "DIVIDER"
+    },
+    {
+      "displayName": "Internal Use Only",
+      "entryType": "SECTION",
+      "fields": [
+        {
+          "id": "folder"
+        },
+        {
+          "id": "labels"
+        }
+      ]
+    }
+  ]
+}
