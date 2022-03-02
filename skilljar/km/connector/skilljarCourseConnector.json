@@ -190,7 +190,7 @@
       "timeZone": "America/New_York",
       "startDate": "2022-02-14",
       "startTime": "00:00",
-      "frequencyType": "WEEKLY"
+      "frequencyType": "DAILY"
     },
     "runMode": "COMPREHENSIVE"
   }
