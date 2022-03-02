@@ -1,5 +1,5 @@
 {
-  "$id": "skilljarCourseConnector",
+  "$id": "skilljar_CourseConnector",
   "$schema": "https://schema.yext.com/config/km/connector/v3",
   "displayName": "Skilljar Course Connector",
   "entityType": "skilljar_course",
