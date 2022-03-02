@@ -2,6 +2,6 @@
   "$id": "skilljar_course",
   "$schema": "https://schema.yext.com/config/km/entity-type/v2",
   "description": "",
-  "displayName": "Course",
+  "displayName": "Skilljar Course",
   "pluralDisplayName": ""
 }
