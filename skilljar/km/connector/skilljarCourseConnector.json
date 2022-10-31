@@ -13,6 +13,13 @@
             "username": "${{api_key}}"
           }
         },
+        "paginationControl": {
+          "cursorPagination": {
+            "cursor": "next",
+            "cursorType": "FULL_URL",
+            "detectCursorInHeader": false
+          }
+        },
         "headers": {},
         "queryParams": {
           "include_searchable_content": "true"
