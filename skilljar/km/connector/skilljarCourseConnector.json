@@ -190,6 +190,11 @@
       "field": "skilljar_courseCategory",
       "header": "tags",
       "subfieldPath": []
+    },
+    {
+      "field": "skilljar_lessonsList",
+      "header": "course.lesson_list[].id",
+      "subfieldPath": []
     }
   ],
   "scheduleConfig": {
