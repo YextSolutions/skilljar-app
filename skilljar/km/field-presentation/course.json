@@ -37,6 +37,9 @@
         },
         {
           "id": "skilljar_lessonCount"
+        },
+        {
+          "id": "skilljar_lessonsList"
         }
       ]
     },

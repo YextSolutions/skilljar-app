@@ -1,0 +1,12 @@
+{
+    "$id": "skilljar_lesson",
+    "$schema": "https://schema.yext.com/config/km/field-eligibility-group/v1",
+    "name": "Lesson-default",
+    "entityType": "skilljar_lesson",
+    "fields": [
+      "skilljar_parentCourse",
+      "keywords",
+      "richTextDescription"
+    ],
+    "required": []
+  }

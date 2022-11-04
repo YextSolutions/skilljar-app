@@ -4,12 +4,14 @@
   "name": "Course-default",
   "entityType": "skilljar_course",
   "fields": [
-    "skilljar_courseCategory",
-    "skilljar_courseLessons",
-    "skilljar_lessonCount",
+    "skilljar_lessonsList",
+    "categories",
     "landingPageUrl",
     "richTextDescription",
-    "shortDescription"
+    "shortDescription",
+    "skilljar_courseCategory",
+    "skilljar_courseLessons",
+    "skilljar_lessonCount"
   ],
   "required": []
 }

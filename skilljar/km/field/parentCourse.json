@@ -1,0 +1,19 @@
+{
+    "$id": "skilljar_parentCourse",
+    "$schema": "https://schema.yext.com/config/km/field/v1",
+    "displayName": "Parent Course",
+    "group": "NONE",
+    "localization": "PRIMARY_ONLY",
+    "type": {
+      "listType": {
+        "typeId": "entityReference",
+        "type": {
+          "entityReferenceType": {
+            "relatedFieldId": "skilljar_lessonsList",
+            "type": "TWO_WAY"
+          }
+        }
+      }
+    },
+    "typeId": "list"
+  }

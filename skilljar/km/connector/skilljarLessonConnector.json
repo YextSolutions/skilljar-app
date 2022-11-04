@@ -1,0 +1,94 @@
+{
+  "$id": "skilljar_lessonConnector",
+  "$schema": "https://schema.yext.com/config/km/connector/v3",
+  "displayName": "Skilljar Lesson Connector",
+  "entityType": "skilljar_lesson",
+  "source": {
+    "sourceConfig": {
+      "apiPullConfig": {
+        "requestType": "GET",
+        "url": "https://api.skilljar.com/v1/domains/${{domain_name}}/published-courses",
+        "authentication": {
+          "basicAuthentication": {
+            "username": "${{api_key}}"
+          }
+        },
+        "paginationControl": {
+          "cursorPagination": {
+            "cursor": "next",
+            "cursorType": "FULL_URL",
+            "detectCursorInHeader": false
+          }
+        },
+        "headers": {},
+        "queryParams": {
+          "include_searchable_content": "true"
+        },
+        "dataFormat": "JSON"
+      }
+    },
+    "baseSelector": {
+      "type": "JSON",
+      "header": "Entity Container",
+      "path": "results[].course.lesson_list[]"
+    },
+    "selectors": [
+      {
+        "type": "JSON",
+        "header": "Entity ID",
+        "path": "id"
+      },
+      {
+        "type": "JSON",
+        "header": "Name",
+        "path": "title"
+      },
+      {
+        "type": "JSON",
+        "header": "course.title",
+        "path": "course.title"
+      },
+      {
+        "type": "JSON",
+        "header": "Rich Text Description",
+        "path": "description_html"
+      },
+      {
+        "type": "JSON",
+        "header": "Keywords",
+        "path": "search_keywords"
+      }
+    ]
+  },
+  "mappings": [
+    {
+      "field": "richTextDescription",
+      "header": "Rich Text Description",
+      "subfieldPath": []
+    },
+    {
+      "field": "entityId",
+      "header": "Entity ID",
+      "subfieldPath": []
+    },
+    {
+      "field": "name",
+      "header": "Name",
+      "subfieldPath": []
+    },
+    {
+      "field": "keywords",
+      "header": "Keywords",
+      "subfieldPath": []
+    }
+  ],
+  "scheduleConfig": {
+    "customSchedule": {
+      "timeZone": "America/New_York",
+      "startDate": "2022-02-14",
+      "startTime": "00:00",
+      "frequencyType": "DAILY"
+    },
+    "runMode": "COMPREHENSIVE"
+  }
+}
