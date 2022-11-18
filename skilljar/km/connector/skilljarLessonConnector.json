@@ -5,32 +5,14 @@
   "entityType": "skilljar_lesson",
   "source": {
     "sourceConfig": {
-      "apiPullConfig": {
-        "requestType": "GET",
-        "url": "https://api.skilljar.com/v1/domains/${{domain_name}}/published-courses",
-        "authentication": {
-          "basicAuthentication": {
-            "username": "${{api_key}}"
+      "nativeSourceConfig": {
+        "source": "skilljar",
+        "operation": "fetchLessons",
+        "inputs": {
+          "domainName": "${{domainName}}",
+          "apiKey": "${{apiKey}}"
           }
-        },
-        "paginationControl": {
-          "cursorPagination": {
-            "cursor": "next",
-            "cursorType": "FULL_URL",
-            "detectCursorInHeader": false
-          }
-        },
-        "headers": {},
-        "queryParams": {
-          "include_searchable_content": "true"
-        },
-        "dataFormat": "JSON"
-      }
-    },
-    "baseSelector": {
-      "type": "JSON",
-      "header": "Entity Container",
-      "path": "results[].course.lesson_list[]"
+        }
     },
     "selectors": [
       {
