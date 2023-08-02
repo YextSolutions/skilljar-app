@@ -1,8 +1,10 @@
 {
   "$id": "skilljar_lessonConnector",
-  "$schema": "https://schema.yext.com/config/km/connector/v3",
+  "$schema": "https://schema.yext.com/config/km/connector/v4",
   "displayName": "Skilljar Lesson Connector",
-  "entityType": "skilljar_lesson",
+  "entityTypes": [
+    "skilljar_lesson"
+  ],
   "source": {
     "sourceConfig": {
       "nativeSourceConfig": {
@@ -42,11 +44,28 @@
       }
     ]
   },
+  "transforms": [
+    {
+      "convertToRichText": {
+        "inputHeaders": {
+          "headers": [
+            "description_html"
+          ]
+        },
+        "inputFormat": "HTML"
+      }
+    }
+  ],
   "mappings": [
     {
-      "field": "richTextDescription",
       "header": "Rich Text Description",
-      "subfieldPath": []
+      "field": "richTextDescriptionV2",
+      "subfieldPath": [
+        {
+          "name": "json"
+        }
+      ],
+      "clearValueIfBlank": false
     },
     {
       "field": "entityId",
@@ -72,5 +91,9 @@
       "frequencyType": "DAILY"
     },
     "runMode": "COMPREHENSIVE"
+  },
+  "comprehensiveModeConfig": {
+    "comprehensiveSet": "ENTITIES_CREATED_BY_THIS_CONNECTOR",
+    "actionOnMissingEntities": "DELETE"
   }
 }

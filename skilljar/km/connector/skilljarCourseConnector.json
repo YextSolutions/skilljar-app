@@ -1,8 +1,10 @@
 {
   "$id": "skilljar_courseConnector",
-  "$schema": "https://schema.yext.com/config/km/connector/v3",
+  "$schema": "https://schema.yext.com/config/km/connector/v4",
   "displayName": "Skilljar Course Connector",
-  "entityType": "skilljar_course",
+  "entityTypes": [
+    "skilljar_course"
+  ],
   "source": {
     "sourceConfig": {
       "nativeSourceConfig": {
@@ -132,6 +134,28 @@
       }
     ]
   },
+  "transforms": [
+    {
+      "convertToRichText": {
+        "inputHeaders": {
+          "headers": [
+            "course.short_description"
+          ]
+        },
+        "inputFormat": "HTML"
+      }
+    },
+    {
+      "convertToRichText": {
+        "inputHeaders": {
+          "headers": [
+            "course.long_description_html"
+          ]
+        },
+        "inputFormat": "HTML"
+      }
+    }
+  ],
   "mappings": [
     {
       "field": "name",
@@ -144,9 +168,14 @@
       "subfieldPath": []
     },
     {
-      "field": "shortDescription",
       "header": "course.short_description",
-      "subfieldPath": []
+      "field": "shortDescriptionV2",
+      "subfieldPath": [
+        {
+          "name": "json"
+        }
+      ],
+      "clearValueIfBlank": false
     },
     {
       "field": "landingPageUrl",
@@ -154,9 +183,14 @@
       "subfieldPath": []
     },
     {
-      "field": "richTextDescription",
       "header": "course.long_description_html",
-      "subfieldPath": []
+      "field": "richTextDescriptionV2",
+      "subfieldPath": [
+        {
+          "name": "json"
+        }
+      ],
+      "clearValueIfBlank": false
     },
     {
       "field": "entityId",
@@ -187,5 +221,9 @@
       "frequencyType": "DAILY"
     },
     "runMode": "COMPREHENSIVE"
+  },
+  "comprehensiveModeConfig": {
+    "comprehensiveSet": "ENTITIES_CREATED_BY_THIS_CONNECTOR",
+    "actionOnMissingEntities": "DELETE"
   }
 }
