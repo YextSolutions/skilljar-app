@@ -49,7 +49,7 @@
       "convertToRichText": {
         "inputHeaders": {
           "headers": [
-            "description_html"
+            "Rich Text Description"
           ]
         },
         "inputFormat": "HTML"
